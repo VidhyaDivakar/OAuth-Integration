@@ -17,7 +17,7 @@ The attacker crafts a malicious login link like:
 https://google.com/auth?redirect_uri=https://myapp.com/profiles/attacker-bio
 They send this to the victim. The victim clicks, logs in with Google, and Google — seeing myapp.com and thinking it's fine — sends the authorization code to https://myapp.com/profiles/attacker-bio?code=ABC123. That page then leaks the code (via Referer header when loading external images, for example) straight to the attacker. The attacker takes that code, exchanges it for an access token, and now has full access to the victim's account. All from a "valid" domain.
 
-#### 3. User Experience vs. Security — The Real Trade-Off
+#### User Experience vs. Security — The Real Trade-Off
 
 The core tension here is this: the easier you make login, the more you hand off control — and responsibility — to someone else's system.
 
